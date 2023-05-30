@@ -1,0 +1,63 @@
+{{>form}}
+
+<style>
+  .centered-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.buy-table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 600px;
+  margin: 20px;
+}
+
+.buy-table th {
+  background-color: #f2f2f2;
+  text-align: left;
+  padding: 8px;
+}
+
+.buy-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.buy-table td:first-child {
+  font-weight: bold;
+}
+</style>
+
+<div class="centered-container">
+  <h1>Realizaste la siguiente compra:</h1>
+  <table class="buy-table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Precio</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each products}}
+      <tr>
+        <td>{{this.title}}</td>
+        <td>{{this.price}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+
+<script>
+    function redireccionar(pagina) {
+        location.href = pagina;
+    } 
+    function volver() {
+        setTimeout(() => redireccionar('/login/adminproductos'), 4000);
+    }
+    volver();
+</script>

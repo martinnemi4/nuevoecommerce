@@ -1,0 +1,80 @@
+<style>
+  .user-form {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 20px;
+    background-color: #f7f7f7;
+    color: #333;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+    text-align: center;
+    margin: 20px;
+  }
+
+  .user-form h1 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .user-form h3 {
+    font-size: 22px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  .user-form img {
+    display: block;
+    margin: 0 auto;
+    max-width: 50%;
+    margin-top: 20px;
+  }
+
+  .user-form button {
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .user-form button:hover {
+    background-color: #444;
+  }
+</style>
+
+<form action="/logout" method="get" class="user-form">
+  <h1>Bienvenido</h1>
+  <h3>Nombre: {{user.firstname}}</h3>
+  <h3>Apellido: {{user.lastname}}</h3>
+  <h3>Email: {{user.email}}</h3>
+  <h3>Tel: {{user.phone}}</h3>
+  <h3>Dirección: {{user.address}}</h3>
+  <h3>Edad: {{user.age}}</h3>
+  <img src="/{{user.photo}}" alt="Imagen subida">
+  <button type="submit">Cerrar sesión</button>
+</form>
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+

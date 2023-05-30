@@ -1,0 +1,51 @@
+ <style>
+    .product-table {
+  border-collapse: collapse;
+  margin-top: 50px;
+  float: right;
+  margin-right: 50px;
+}
+
+.product-table th,
+.product-table td {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.product-table th {
+  background-color: #cccccc;
+  text-align: center;
+}
+
+.product-table td {
+  text-align: left;
+}
+ </style>
+
+<table class="product-table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Precio</th>
+      <th>Descripción</th>
+      <th></th>
+    </tr>
+  </thead>
+ <tbody>
+    {{#each products}}
+    <tr>
+      <td>{{this.title}}</td>
+      <td>{{this.price}}</td>
+      <td><img src="{{this.thumbnail}}"></td>
+      <td>
+        <form method="POST" action="/addProduct">
+          <input type="hidden" name="productId" value="{{this._id}}">
+          <input type="hidden" name="title" value="{{this.title}}">
+          <input type="hidden" name="price" value="{{this.price}}">
+          <button type="submit">Agregar al carrito</button>
+        </form>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
